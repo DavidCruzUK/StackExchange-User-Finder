@@ -1,0 +1,42 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    androidTools_version = "4.1.1"
+    kotlin_version = "1.4.21"
+
+    rxJava2_version = "2.2.20"
+    rxAndroid_version = "2.1.1"
+    retrofit_version = "2.9.0"
+
+    configParams = [
+            applicationId       : "com.lastreacts.candyspace",
+            compileSdkVersion   : 30,
+            buildToolsVersion   : "30.0.3",
+            minSdkVersion       : 19,
+            targetSdkVersion    : 30,
+            versionCode         : 1,
+            versionName         : "1.0",
+    ]
+
+    classPathDependencies = [
+            androidTools    : "com.android.tools.build:gradle:$androidTools_version",
+            kotlin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+    ]
+
+    networkDependencies = [
+            rxJava2         : "io.reactivex.rxjava2:rxjava:$rxJava2_version",
+            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroid_version",
+            retrofit2       : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            gson            : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            rxJava2Adapter  : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+    ]
+}

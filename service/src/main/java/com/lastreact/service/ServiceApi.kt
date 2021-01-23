@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ServiceApi {
 
-    @GET("/2.2/users?order=desc&sort=name&site=stackoverflow")
+    @GET("users?order=desc&sort=name&site=stackoverflow")
     fun requestServiceUsers(): Single<StackApiResponse>
 
 }

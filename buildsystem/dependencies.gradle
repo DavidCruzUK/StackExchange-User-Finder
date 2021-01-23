@@ -18,42 +18,45 @@ ext {
     rxJava2_version = "2.2.20"
     rxAndroid_version = "2.1.1"
     retrofit_version = "2.9.0"
+    coroutines_version = "1.4.2"
 
     glide_version = "4.11.0"
 
     configParams = [
-            applicationId       : "com.lastreacts.candyspace",
-            compileSdkVersion   : 30,
-            buildToolsVersion   : "30.0.3",
-            minSdkVersion       : 19,
-            targetSdkVersion    : 30,
-            versionCode         : 1,
-            versionName         : "1.0",
+            applicationId    : "com.lastreacts.candyspace",
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
     ]
 
     commonDependencies = [
-            dagger: "com.google.dagger:dagger:${dagger_version}",
+            dagger           : "com.google.dagger:dagger:${dagger_version}",
+            coroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
     ]
 
     classPathDependencies = [
-            androidTools    : "com.android.tools.build:gradle:$androidTools_version",
-            kotlin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+            androidTools: "com.android.tools.build:gradle:$androidTools_version",
+            kotlin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
     ]
 
-    kaptDependencies =[
-            dagger          : "com.google.dagger:dagger-compiler:${dagger_version}",
-            glide           : "com.github.bumptech.glide:compiler:$glide_version",
+    kaptDependencies = [
+            dagger: "com.google.dagger:dagger-compiler:${dagger_version}",
+            glide : "com.github.bumptech.glide:compiler:$glide_version",
     ]
 
     networkDependencies = [
-            rxJava2         : "io.reactivex.rxjava2:rxjava:$rxJava2_version",
-            rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroid_version",
-            retrofit2       : "com.squareup.retrofit2:retrofit:$retrofit_version",
-            gson            : "com.squareup.retrofit2:converter-gson:$retrofit_version",
-            rxJava2Adapter  : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            rxJava2       : "io.reactivex.rxjava2:rxjava:$rxJava2_version",
+            rxAndroid     : "io.reactivex.rxjava2:rxandroid:$rxAndroid_version",
+            retrofit2     : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            gson          : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            rxJava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
     ]
 
     uiDependencies = [
-            glide : "com.github.bumptech.glide:glide:$glide_version"
+            glide: "com.github.bumptech.glide:glide:$glide_version"
     ]
 }

@@ -13,6 +13,8 @@ ext {
     androidTools_version = "4.1.1"
     kotlin_version = "1.4.21"
 
+    dagger_version = '2.31.2'
+
     rxJava2_version = "2.2.20"
     rxAndroid_version = "2.1.1"
     retrofit_version = "2.9.0"
@@ -29,13 +31,18 @@ ext {
             versionName         : "1.0",
     ]
 
+    commonDependencies = [
+            dagger: "com.google.dagger:dagger:${dagger_version}",
+    ]
+
     classPathDependencies = [
             androidTools    : "com.android.tools.build:gradle:$androidTools_version",
             kotlin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
     ]
 
     kaptDependencies =[
-            glide           : "com.github.bumptech.glide:compiler:$glide_version"
+            dagger          : "com.google.dagger:dagger-compiler:${dagger_version}",
+            glide           : "com.github.bumptech.glide:compiler:$glide_version",
     ]
 
     networkDependencies = [

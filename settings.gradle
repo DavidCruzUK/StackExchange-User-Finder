@@ -1,2 +1,5 @@
+include ':entity'
+include ':service'
+include ':repository'
 include ':app'
 rootProject.name = "CandySpace"

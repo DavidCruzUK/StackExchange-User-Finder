@@ -17,6 +17,8 @@ ext {
     rxAndroid_version = "2.1.1"
     retrofit_version = "2.9.0"
 
+    glide_version = "4.11.0"
+
     configParams = [
             applicationId       : "com.lastreacts.candyspace",
             compileSdkVersion   : 30,
@@ -32,11 +34,19 @@ ext {
             kotlin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
     ]
 
+    kaptDependencies =[
+            glide           : "com.github.bumptech.glide:compiler:$glide_version"
+    ]
+
     networkDependencies = [
             rxJava2         : "io.reactivex.rxjava2:rxjava:$rxJava2_version",
             rxAndroid       : "io.reactivex.rxjava2:rxandroid:$rxAndroid_version",
             retrofit2       : "com.squareup.retrofit2:retrofit:$retrofit_version",
             gson            : "com.squareup.retrofit2:converter-gson:$retrofit_version",
             rxJava2Adapter  : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+    ]
+
+    uiDependencies = [
+            glide : "com.github.bumptech.glide:glide:$glide_version"
     ]
 }

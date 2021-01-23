@@ -1,4 +1,4 @@
-package com.lastreact.candyspace
+package com.lastreact.stackexchange
 
 import org.junit.Test
 

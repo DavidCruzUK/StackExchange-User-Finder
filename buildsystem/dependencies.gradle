@@ -20,10 +20,12 @@ ext {
     retrofit_version = "2.9.0"
     coroutines_version = "1.4.2"
 
+    room_version = '2.2.6'
+
     glide_version = "4.11.0"
 
     configParams = [
-            applicationId    : "com.lastreacts.candyspace",
+            applicationId    : "com.lastreacts.stackexchange",
             compileSdkVersion: 30,
             buildToolsVersion: "30.0.3",
             minSdkVersion    : 19,
@@ -46,6 +48,7 @@ ext {
     kaptDependencies = [
             dagger: "com.google.dagger:dagger-compiler:${dagger_version}",
             glide : "com.github.bumptech.glide:compiler:$glide_version",
+            room  : "androidx.room:room-compiler:${room_version}",
     ]
 
     networkDependencies = [
@@ -54,6 +57,11 @@ ext {
             retrofit2     : "com.squareup.retrofit2:retrofit:$retrofit_version",
             gson          : "com.squareup.retrofit2:converter-gson:$retrofit_version",
             rxJava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+    ]
+
+    roomDependencies = [
+            RoomRuntime: "androidx.room:room-runtime:${room_version}",
+            room       : "androidx.room:room-ktx:${room_version}",
     ]
 
     uiDependencies = [

@@ -1,8 +1,8 @@
-package com.lastreact.candyspace
+package com.lastreact.stackexchange
 
 import android.app.Application
-import com.lastreact.candyspace.di.ApplicationComponent
-import com.lastreact.candyspace.di.DaggerApplicationComponent
+import com.lastreact.stackexchange.di.ApplicationComponent
+import com.lastreact.stackexchange.di.DaggerApplicationComponent
 
 class App: Application() {
     lateinit var applicationComponent: ApplicationComponent

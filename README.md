@@ -1,1 +1,1 @@
-# CanduSpace Code Project
+# StackExchange User Finder

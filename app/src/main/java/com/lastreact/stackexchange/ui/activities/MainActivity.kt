@@ -1,28 +1,26 @@
-package com.lastreact.candyspace.ui.activities
+package com.lastreact.stackexchange.ui.activities
 
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
-import com.lastreact.candyspace.base.BaseActivity
-import com.lastreact.candyspace.databinding.ActivityMainBinding
-import com.lastreact.candyspace.viewmodel.MainViewModel
-import com.lastreact.entity.data.module.response.StackApiResponse
-import com.lastreact.repository.Repository
+import com.lastreact.stackexchange.base.BaseActivity
+import com.lastreact.stackexchange.databinding.ActivityMainBinding
+import com.lastreact.stackexchange.viewmodel.MainViewModel
+import com.lastreact.entity.data.module.response.Items
 import com.lastreact.service.di.ResponseHandler
 import javax.inject.Inject
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
 
     @Inject
-    lateinit var mainViewModel: MainViewModel
-
+    lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
 
         lifecycleScope.launchWhenStarted {
-            mainViewModel.getUsers(this@MainActivity)
+            viewModel.getUsers(this@MainActivity)
         }
     }
 
@@ -30,7 +28,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun onSuccessResponse(response: StackApiResponse) {
+    override fun onSuccessResponse(response: List<Items>) {
         Log.i("TEST", "onSuccessResponse: $response")
     }
 

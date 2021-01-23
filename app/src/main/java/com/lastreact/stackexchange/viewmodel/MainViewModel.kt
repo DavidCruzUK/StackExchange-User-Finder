@@ -1,4 +1,4 @@
-package com.lastreact.candyspace.viewmodel
+package com.lastreact.stackexchange.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
 
-    suspend fun getUsers(responseHandler: ResponseHandler) {
+    fun getUsers(responseHandler: ResponseHandler) {
         viewModelScope.launch {
             repository.getUsers(responseHandler)
         }

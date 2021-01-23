@@ -1,10 +1,10 @@
-package com.lastreact.candyspace.base
+package com.lastreact.stackexchange.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.lastreact.candyspace.App
-import com.lastreact.candyspace.di.ApplicationComponent
+import com.lastreact.stackexchange.App
+import com.lastreact.stackexchange.di.ApplicationComponent
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 

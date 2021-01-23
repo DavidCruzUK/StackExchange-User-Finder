@@ -5,6 +5,7 @@ import com.lastreact.stackexchange.ui.activities.MainActivity
 import com.lastreact.stackexchange.di.modules.ApplicationModule
 import com.lastreact.repository.di.modules.RepositoryModule
 import com.lastreact.service.di.modules.ServiceModule
+import com.lastreact.stackexchange.ui.activities.DetailActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -18,6 +19,7 @@ import javax.inject.Singleton
 interface ApplicationComponent {
 
     fun inject(mainActivity: MainActivity)
+    fun inject(detailActivity: DetailActivity)
 
     @Component.Factory
     interface Factory {

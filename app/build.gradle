@@ -64,7 +64,7 @@ dependencies {
     kapt kaptDependencies.values()
 
     // Local Test
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation testDependencies.values()
 
     // Instrumentation Test
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

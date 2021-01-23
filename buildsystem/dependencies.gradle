@@ -24,6 +24,9 @@ ext {
 
     glide_version = "4.11.0"
 
+    junit_version = "4.13.1"
+    mockk_version = "1.10.5"
+
     configParams = [
             applicationId    : "com.lastreacts.stackexchange",
             compileSdkVersion: 30,
@@ -66,5 +69,11 @@ ext {
 
     uiDependencies = [
             glide: "com.github.bumptech.glide:glide:$glide_version"
+    ]
+
+    testDependencies = [
+            jUnit     : "junit:junit:$junit_version",
+            mockk     : "io.mockk:mockk:$mockk_version",
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version",
     ]
 }

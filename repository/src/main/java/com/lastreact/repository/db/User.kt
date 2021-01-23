@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey
     @ColumnInfo(name = "userid")
-    val userId: Int? = null,
+    val userId: Int,
     @ColumnInfo(name = "profileimage")
     val profileImage: String? = null,
     @ColumnInfo(name = "displayname")

@@ -1,10 +1,12 @@
 package com.lastreact.stackexchange.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
-import com.lastreact.entity.data.module.response.Items
+import com.lastreact.entity.data.module.response.UserItem
 import com.lastreact.service.di.ResponseHandler
 import com.lastreact.stackexchange.base.BaseActivity
 import com.lastreact.stackexchange.databinding.ActivityMainBinding
@@ -32,10 +34,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun onSuccessResponse(response: List<Items>) {
+    override fun onSuccessResponse(response: List<UserItem>) {
         Log.i("TEST", "onSuccessResponse: $response")
         viewModel.showProgressBar(false)
-        runOnUiThread { binding.hello.text = response[0].displayName }
+        runOnUiThread {
+            binding.hello.text = response[0].displayName
+            binding.hello.setOnClickListener {
+                val intent = Intent(this, DetailActivity::class.java).apply {
+                    putExtras(bundleOf(DetailActivity.USER_ID_KEY to response[0].userId))
+                }
+                startActivity(intent)
+            }
+        }
+
     }
 
     override fun onErrorResponse(error: Throwable) {

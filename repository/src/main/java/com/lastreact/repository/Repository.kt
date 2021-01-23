@@ -1,5 +1,6 @@
 package com.lastreact.repository
 
+import com.lastreact.entity.data.module.response.UserItem
 import com.lastreact.entity.data.module.response.StackApiResponse
 import com.lastreact.repository.data.mapper.mapToPresent
 import com.lastreact.repository.data.mapper.mapToUserDao
@@ -31,6 +32,10 @@ class Repository(
                 .subscribe({ res -> onSuccessResponse(handler, res) },
                     { err -> handler.onErrorResponse(err) })
         )
+    }
+
+    suspend fun getUserById(id: Int): UserItem {
+        return db.getUserById(id).mapToPresent()
     }
 
     private fun onSuccessResponse(handler: ResponseHandler, res: StackApiResponse) {

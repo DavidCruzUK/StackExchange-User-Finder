@@ -3,10 +3,10 @@ package com.lastreact.entity.data.module.response
 import com.google.gson.annotations.SerializedName
 
 data class StackApiResponse(
-    val items: List<Items>
+    val items: List<UserItem>
 )
 
-data class Items(
+data class UserItem(
 
     val reputation: Int? = null,
 
@@ -23,7 +23,7 @@ data class Items(
     val profileImage: String? = null,
 
     @field:SerializedName("user_id")
-    val userId: Int? = null,
+    val userId: Int,
 
     val age: String? = null,
 

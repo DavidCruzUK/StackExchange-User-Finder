@@ -19,10 +19,12 @@ class Repository(
     private val db: UserDao
 ) {
 
-    private val disposable: CompositeDisposable = CompositeDisposable()
+    private var disposable: CompositeDisposable? = null
 
     fun getUsers(handler: ResponseHandler) {
-        disposable.add(
+        createCompositeDisposable()
+
+        disposable?.add(
             response.requestServiceUsers()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -33,11 +35,22 @@ class Repository(
 
     private fun onSuccessResponse(handler: ResponseHandler, res: StackApiResponse) {
         CoroutineScope(Dispatchers.Default).launch {
+            db.deleteAllUsers()
             val usersDao: List<User> = res.mapToUserDao()
             db.insertListOfUsers(usersDao)
             val users = db.getAllUsersList().mapToPresent()
             handler.onSuccessResponse(users)
+            disposeCompositeDisposable()
         }
+    }
+
+    private fun createCompositeDisposable() {
+        if (disposable == null) disposable = CompositeDisposable()
+    }
+
+    private fun disposeCompositeDisposable() {
+        if (disposable?.isDisposed?.not() == true) disposable?.dispose()
+        disposable = null
     }
 
 }

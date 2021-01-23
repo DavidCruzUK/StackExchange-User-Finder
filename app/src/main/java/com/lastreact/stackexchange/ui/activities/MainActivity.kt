@@ -2,12 +2,14 @@ package com.lastreact.stackexchange.ui.activities
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.lifecycleScope
+import com.lastreact.entity.data.module.response.Items
+import com.lastreact.service.di.ResponseHandler
 import com.lastreact.stackexchange.base.BaseActivity
 import com.lastreact.stackexchange.databinding.ActivityMainBinding
 import com.lastreact.stackexchange.viewmodel.MainViewModel
-import com.lastreact.entity.data.module.response.Items
-import com.lastreact.service.di.ResponseHandler
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
@@ -20,7 +22,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
         appComponent.inject(this)
 
         lifecycleScope.launchWhenStarted {
+            viewModel.showProgressBar(true)
             viewModel.getUsers(this@MainActivity)
+            viewModel.model.collect(::onCollect)
         }
     }
 
@@ -30,9 +34,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
 
     override fun onSuccessResponse(response: List<Items>) {
         Log.i("TEST", "onSuccessResponse: $response")
+        viewModel.showProgressBar(false)
+        runOnUiThread { binding.hello.text = response[0].displayName }
     }
 
     override fun onErrorResponse(error: Throwable) {
         Log.i("TEST", "onSuccessResponse: $error")
     }
+
+    private fun onCollect(uiModel: MainViewModel.UiModel) {
+        when (uiModel) {
+            is MainViewModel.UiModel.ShowProgress -> showProgressBar(uiModel.show)
+        }
+    }
+
+    private fun showProgressBar(show: Boolean) {
+        binding.progressBar.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
 }

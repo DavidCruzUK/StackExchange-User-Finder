@@ -2,9 +2,7 @@ package com.lastreact.stackexchange.ui.activities
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -71,6 +69,9 @@ class MainActivityTest {
             .check(matches(not(isDisplayed())))
     }
 
+    /**
+     * Scenario should be tested with any internet connection
+     */
     @Test
     fun testOnAnyRecyclerViewItemDetailScreenCanBeSeen() {
         // PARAMETERS
@@ -82,6 +83,26 @@ class MainActivityTest {
 
         // Verify bronzeBadgeCount is displayed
         onView(withId(R.id.detailActivityContainer)).check(matches(isDisplayed()))
+    }
+
+    /**
+     * Scenario should be tested with no internet connection
+     * and on fresh app install
+     */
+    @Test
+    fun testMainScreenLooksAsExpectedOnNoInternetConnection() {
+        // PARAMETERS
+        val timeOnHold: Long = 2000 // 2S
+
+        // Wait 2 seconds to to receive users
+        Thread.sleep(timeOnHold)
+
+        // Verify recyclerview contains data
+        assert(recyclerViewItemCount() == 0)
+
+        // Verify noPreviousDataTv is displayed
+        onView(withId(R.id.noPreviousDataTv))
+            .check(matches(isDisplayed()))
     }
 
 

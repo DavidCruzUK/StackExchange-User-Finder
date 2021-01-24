@@ -8,13 +8,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class DetailViewModel(private val repository: Repository): ViewModel() {
+class DetailViewModel(private val repository: Repository) : ViewModel() {
 
-    private val _model: MutableStateFlow<DetailModel> = MutableStateFlow(DetailModel.RetrieveUserById(user = UserItem(userId = 0)))
+    private val _model: MutableStateFlow<DetailModel> =
+        MutableStateFlow(DetailModel.RetrieveUserById(user = UserItem(userId = 0)))
     val model: StateFlow<DetailModel> get() = _model
 
     sealed class DetailModel {
-        data class RetrieveUserById(val user: UserItem): DetailModel()
+        data class RetrieveUserById(val user: UserItem) : DetailModel()
     }
 
     suspend fun retrieveUserById(id: Int) {

@@ -2,4 +2,6 @@
     <string name="app_name">StackExchange</string>
     <string name="search_text">SEARCH</string>
     <string name="badges_text">Badges:</string>
+    <string name="search_by_name_text">Search by name</string>
+    <string name="error_no_data_text">There is not users found.\nDo you have Internet Connection?</string>
 </resources>

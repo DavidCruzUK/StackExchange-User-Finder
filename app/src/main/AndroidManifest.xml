@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StackExchange">
-        <activity android:name="com.lastreact.stackexchange.ui.activities.MainActivity">
+        <activity android:name="com.lastreact.stackexchange.ui.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -12,6 +12,9 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
 
+    var userItems: ArrayList<UserItem> = ArrayList()
+    var userItemsFiltered: ArrayList<UserItem> = ArrayList()
+
     sealed class UiModel {
         data class ShowProgress(val show: Boolean): UiModel()
     }
@@ -27,6 +30,13 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
 
     suspend fun getUsers(): List<UserItem> {
         return repository.getUsersList()
+    }
+
+    fun getFilteredItems(text: String): List<UserItem> {
+        userItemsFiltered = ArrayList(userItems)
+        return userItemsFiltered
+            .filter { it.displayName?.contains(text, true) ?: false }
+            .sortedBy { it.displayName }
     }
 
     fun showProgressBar(show: Boolean) {

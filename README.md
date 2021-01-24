@@ -23,5 +23,14 @@
 * MocKK: 1.10.5
 
 ## Supports:
-* Minimum SDK: 19 (Android 4.4.1)
-* Target SDK: 30
+* Minimum SDK: 19 (Android 4.4)
+* Target SDK: 30 (Android 11)
+
+### Tested with the following devices:
+* Samsung Galaxy S2 (Android 4.4.2)
+* Samsung Galaxy J6 (Android 9.0)
+* Google Pixel XL (Android 11)
+* Tablet Neocore 10.1 (Android 6.0)
+
+### Builds with:
+`$ ./gradlew lint test assembleDebug`

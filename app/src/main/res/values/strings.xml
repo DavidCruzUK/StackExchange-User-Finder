@@ -4,4 +4,6 @@
     <string name="badges_text">Badges:</string>
     <string name="search_by_name_text">Search by name</string>
     <string name="error_no_data_text">There is not users found.\nDo you have Internet Connection?</string>
+    <string name="request_users_text">request users</string>
+    <string name="user_avatar_image_text">User avatar image</string>
 </resources>

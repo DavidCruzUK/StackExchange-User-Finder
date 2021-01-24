@@ -91,7 +91,7 @@
         app:layout_constraintStart_toStartOf="@+id/avatarIv"
         app:layout_constraintTop_toBottomOf="@+id/badgesTv"
         app:layout_constraintVertical_bias="0.39"
-        tools:text="TextView" />
+        tools:text="Valencia, Spain" />
 
     <TextView
         android:id="@+id/ageTv"
@@ -102,7 +102,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/avatarIv"
         app:layout_constraintTop_toBottomOf="@+id/locationTv"
-        tools:text="TextView" />
+        tools:text="32" />
 
     <TextView
         android:id="@+id/creationDateTv"
@@ -113,7 +113,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/avatarIv"
         app:layout_constraintTop_toBottomOf="@+id/ageTv"
-        tools:text="TextView" />
+        tools:text="12/10/2010" />
 
     <TextView
         android:id="@+id/goldBadgeCountTv"
@@ -125,7 +125,7 @@
         app:layout_constraintStart_toEndOf="@+id/goldBadge"
         app:layout_constraintTop_toTopOf="@+id/goldBadge"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="TextView" />
+        tools:text="101" />
 
     <TextView
         android:id="@+id/silverBadgeCountTv"
@@ -137,7 +137,7 @@
         app:layout_constraintStart_toEndOf="@+id/goldBadge"
         app:layout_constraintTop_toBottomOf="@+id/goldBadge"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="TextView" />
+        tools:text="212" />
 
     <TextView
         android:id="@+id/bronzeBadgeCount"
@@ -149,6 +149,6 @@
         app:layout_constraintStart_toEndOf="@+id/goldBadge"
         app:layout_constraintTop_toBottomOf="@+id/silverBadge"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="TextView" />
+        tools:text="323" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

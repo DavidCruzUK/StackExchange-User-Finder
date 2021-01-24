@@ -2,4 +2,5 @@
 <resources>
     <dimen name="badge_circle_size">25dp</dimen>
     <dimen name="progress_bar_size">50dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
 </resources>

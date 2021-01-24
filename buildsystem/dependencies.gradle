@@ -36,6 +36,8 @@ ext {
     // Instrument Test - UI
     junit_android_version = "1.1.2"
     espresso_version = "3.3.0"
+    testrunner_version = "1.2.0"
+    testrules_version = "1.1.0"
 
     configParams = [
             applicationId    : "com.lastreacts.stackexchange",
@@ -94,7 +96,10 @@ ext {
     ]
 
     androidTestDependencies = [
-            junit       : "androidx.test.ext:junit:$junit_android_version",
-            espressoCore: "androidx.test.espresso:espresso-core:$espresso_version",
+            jUnit          : "androidx.test.ext:junit:${junit_android_version}",
+            testRunner     : "androidx.test:runner:${testrunner_version}",
+            testRules      : "androidx.test:rules:${testrules_version}",
+            espressoCore   : "androidx.test.espresso:espresso-core:${espresso_version}",
+            espressoContrib: "androidx.test.espresso:espresso-contrib:${espresso_version}",
     ]
 }

@@ -25,14 +25,16 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
+        setActionBarBackIcon()
+    }
 
+    override fun initLifeCycleScope() {
         lifecycleScope.launchWhenStarted {
             intent?.extras?.getInt(USER_ID_KEY)?.let {
                 viewModel.retrieveUserById(it)
             }
             viewModel.model.collect(::onModeCollect)
         }
-        setActionBarBackIcon()
     }
 
     override fun createViewBinding(): ActivityDetailBinding {

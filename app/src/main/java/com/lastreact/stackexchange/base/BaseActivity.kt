@@ -15,11 +15,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     abstract fun createViewBinding(): VB
 
+    abstract fun initLifeCycleScope()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         _appComponent = (application as App).applicationComponent
         super.onCreate(savedInstanceState)
         binding = createViewBinding()
         setContentView(binding.root)
+        initLifeCycleScope()
     }
 
 }

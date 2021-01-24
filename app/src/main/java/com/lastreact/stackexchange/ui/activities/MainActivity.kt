@@ -39,7 +39,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
         appComponent.inject(this)
         setupRecyclerView()
         setClickListeners()
+    }
 
+    override fun initLifeCycleScope() {
         lifecycleScope.launchWhenStarted {
             viewModel.showProgressBar(true)
             viewModel.getUsers(this@MainActivity)

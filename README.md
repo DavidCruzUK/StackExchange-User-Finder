@@ -24,4 +24,4 @@
 
 ## Supports:
 * Minimum SDK: 19 (Android 4.4.1)
-* Target SDK: 20
+* Target SDK: 30

@@ -11,9 +11,10 @@ java {
 
 dependencies {
     implementation(project(":entity"))
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation commonDependencies.kotlin
+
     implementation commonDependencies.dagger
     kapt kaptDependencies.dagger
-    implementation networkDependencies.values()
 
+    implementation networkDependencies.values()
 }

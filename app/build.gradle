@@ -48,13 +48,6 @@ dependencies {
     implementation project(":service")
     implementation project(":repository")
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.activity:activity-ktx:1.1.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
     implementation commonDependencies.values()
 
     // 3rd part libraries
@@ -67,6 +60,5 @@ dependencies {
     testImplementation testDependencies.values()
 
     // Instrumentation Test
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation androidTestDependencies.values()
 }

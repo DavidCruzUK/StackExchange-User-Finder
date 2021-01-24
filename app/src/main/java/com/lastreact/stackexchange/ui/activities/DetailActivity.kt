@@ -1,6 +1,5 @@
 package com.lastreact.stackexchange.ui.activities
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.lifecycle.lifecycleScope
@@ -12,8 +11,6 @@ import com.lastreact.stackexchange.extensions.convertLongToTime
 import com.lastreact.stackexchange.extensions.loadUrl
 import com.lastreact.stackexchange.viewmodel.DetailViewModel
 import kotlinx.coroutines.flow.collect
-import java.text.SimpleDateFormat
-import java.util.*
 import javax.inject.Inject
 
 class DetailActivity : BaseActivity<ActivityDetailBinding>() {

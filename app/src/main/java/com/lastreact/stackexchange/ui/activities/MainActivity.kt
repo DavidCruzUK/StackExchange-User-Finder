@@ -85,6 +85,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ResponseHandler {
             hideKeyboard()
             onSearchButtonPressed()
         }
+        binding.serviceRequest.setOnClickListener {
+            removeSearchFocusAndErrorDisplay()
+            viewModel.showProgressBar(true)
+            viewModel.getUsers(this)
+        }
     }
 
     private fun onSearchButtonPressed() {

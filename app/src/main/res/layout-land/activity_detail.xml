@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatarIv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/userNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/avatarIv"
+        app:layout_constraintTop_toTopOf="@+id/avatarIv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="User Name" />
+
+    <TextView
+        android:id="@+id/reputationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/userNameTv"
+        app:layout_constraintTop_toBottomOf="@+id/userNameTv"
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:text="3434" />
+
+    <com.lastreact.stackexchange.ui.custom.BadgeCircleView
+        android:id="@+id/goldBadge"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/badgesTv"
+        app:layout_constraintTop_toBottomOf="@+id/badgesTv"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <com.lastreact.stackexchange.ui.custom.BadgeCircleView
+        android:id="@+id/silverBadge"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/goldBadge"
+        app:layout_constraintTop_toBottomOf="@+id/goldBadge"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.lastreact.stackexchange.ui.custom.BadgeCircleView
+        android:id="@+id/bronzeBadge"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/silverBadge"
+        app:layout_constraintTop_toBottomOf="@+id/silverBadge"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/goldBadgeCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/goldBadge"
+        app:layout_constraintTop_toTopOf="@+id/goldBadge" />
+
+    <TextView
+        android:id="@+id/silverBadgeCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/silverBadge"
+        app:layout_constraintTop_toBottomOf="@+id/goldBadge" />
+
+    <TextView
+        android:id="@+id/bronzeBadgeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/bronzeBadge"
+        app:layout_constraintTop_toBottomOf="@+id/silverBadge"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/badgesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/badges_text"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/reputationTv"
+        app:layout_constraintTop_toBottomOf="@+id/reputationTv"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <TextView
+        android:id="@+id/locationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/avatarIv"
+        app:layout_constraintTop_toTopOf="@+id/avatarIv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Location" />
+
+    <TextView
+        android:id="@+id/ageTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/locationTv"
+        app:layout_constraintTop_toBottomOf="@+id/locationTv"
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:text="Age" />
+
+    <TextView
+        android:id="@+id/creationDateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toStartOf="@+id/ageTv"
+        app:layout_constraintTop_toBottomOf="@+id/ageTv"
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:text="Create At" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

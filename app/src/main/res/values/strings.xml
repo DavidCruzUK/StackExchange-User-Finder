@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StackExchange</string>
+    <string name="search_text">SEARCH</string>
+    <string name="badges_text">Badges:</string>
 </resources>

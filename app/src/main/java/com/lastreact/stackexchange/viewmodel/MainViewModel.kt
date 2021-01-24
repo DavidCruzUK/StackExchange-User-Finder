@@ -2,7 +2,9 @@ package com.lastreact.stackexchange.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.lastreact.entity.data.module.response.UserItem
 import com.lastreact.repository.Repository
+import com.lastreact.repository.data.mapper.mapToPresent
 import com.lastreact.service.di.ResponseHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,6 +23,10 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             repository.getUsers(responseHandler)
         }
+    }
+
+    suspend fun getUsers(): List<UserItem> {
+        return repository.getUsersList()
     }
 
     fun showProgressBar(show: Boolean) {

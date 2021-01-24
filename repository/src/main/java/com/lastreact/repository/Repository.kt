@@ -38,12 +38,16 @@ class Repository(
         return db.getUserById(id).mapToPresent()
     }
 
+    suspend fun getUsersList(): List<UserItem> {
+        return db.getAllUsersList().mapToPresent().sortedBy { it.displayName }
+    }
+
     private fun onSuccessResponse(handler: ResponseHandler, res: StackApiResponse) {
         CoroutineScope(Dispatchers.Default).launch {
             db.deleteAllUsers()
             val usersDao: List<User> = res.mapToUserDao()
             db.insertListOfUsers(usersDao)
-            val users = db.getAllUsersList().mapToPresent()
+            val users = getUsersList()
             handler.onSuccessResponse(users)
             disposeCompositeDisposable()
         }
